@@ -55,10 +55,6 @@ resource "yandex_compute_instance" "vm" {
     ipv6      = false
   }
 
-  metadata = {
-    ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
-  }
-
   lifecycle {
     create_before_destroy = true
   }
